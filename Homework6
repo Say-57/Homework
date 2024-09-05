@@ -1,0 +1,252 @@
+#include <iostream>
+#include <array>
+
+
+void cuckoo(); 
+void extraLargeNum();
+void collectors(); 
+void luckyTicket();
+void fibonachiNum();
+void deposit();
+void fraction();
+void guessNumber();
+
+
+
+using namespace std;
+
+ int main() { 
+ //cuckoo();
+ //extraLargeNum();
+ //collectors();
+ //luckyTicket();
+ fibonachiNum();
+ deposit();
+ fraction();
+ guessNumber();
+
+}
+
+void cuckoo()
+{
+	cout << "\n==============Mystic bird========\n";
+	
+	int hour; 
+	bool isCorr= false;
+	
+	cout << "\nPlease enter an hour: ";
+	cin >> hour;
+	cout << "\n";
+	
+	while(!isCorr)
+	{
+		if(hour<0 || hour >=24)
+			{
+				cout << "\nWorng number, enter a correct number: ";
+				cin >> hour;
+			}
+		else
+			isCorr = true;
+	
+	}
+	
+	if(hour == 0)
+	{
+		cout << "\nOnly thing you hear, is silence...";
+		return;
+	}
+	while(hour != 0)
+	{
+		cout << "Co-Co, ";
+		hour--;
+	}
+}
+
+void extraLargeNum()
+{
+	cout << "\n==============Extra big number========\n";
+	
+	int num;
+	int answer =0;
+	
+	cout << "\nPlease enter an number: ";
+	cin >> num;
+	cout << "\n";
+	
+	while(num !=0)
+	{
+		num /= 10;
+		answer++;
+	}
+
+	cout << "\n"<< answer ;
+	
+}
+
+void collectors()
+{
+	cout << "\n==============Who are you, , i didnt call you, go screw yourself ========\n";
+	
+	int debt;
+	string Name;
+	int pay;
+	
+	cout << "\nPlease enter Name: ";
+	cin >> Name;
+	cout << "\nPlese enter a full amount of debt";
+	cin >> debt;
+	
+	while(debt >0)
+	{
+		cout << "\n Your current debt: "<< debt;
+	
+		cout << "\nEnter your payment";
+		cin >> pay;
+		if(pay<=0)
+		{
+			cout << "\n Dont joke with us";
+		}
+		else
+		{
+			debt -= pay;
+		}
+	}
+	
+		cout << "\nYou dont have any debt";
+	if(debt < 0)
+	{
+		cout << ", even better, you overpay, now on your account: " << - debt;
+	}
+
+	
+}
+
+int threeNumber(int a)
+{
+	int i =3;
+	int answer=0;
+
+	while(i!=0)
+	{
+		answer += a%10;
+		a /= 10;
+		i--;
+	}
+	
+	return answer;
+}
+
+void luckyTicket()
+{
+	cout << "\n==============Lucky Ticket ========\n";
+	
+	int ticket;
+	int firstThree=0;
+	int lastThree=0;
+	
+	cout << "\nEnter your ticket number";
+	cin>> ticket;
+	
+	
+	while(ticket < 99999)
+	{
+		cout << "\nEnter at least six number ticket";
+		cin>> ticket;
+	} 
+	
+	lastThree=threeNumber(ticket);
+	
+	
+	while(ticket > 999)
+	{
+	
+		ticket /= 10;
+
+	}
+	
+	firstThree = threeNumber(ticket);
+	
+	if(firstThree== lastThree)
+	{
+		cout << "\nYou are lucky man!";
+	}
+	else
+	{
+		cout << "\nIt just a ticket!";
+	}
+
+	
+}
+
+
+void fibonachiNum()
+{
+	int N = 7;
+	int first = 1;
+	int second = 1;
+	int temp;
+	
+	cout << "\n==============Fibonachi Number ========\n";
+	
+	cout << "\nEnter your serial number in Fibonachi Number";
+	cin>> N;
+	
+	if(N==1 || N == 2)
+	{
+		
+	}
+	N-=2;
+	int i =0;
+	
+	while(N!=i)
+	{
+		temp = first+second;
+		first=second;
+		second = temp;
+		i++;
+	}
+	
+	cout << "\n" << temp;
+}
+
+
+	
+
+
+void deposit()
+{
+	
+	int sum, percent, goal;
+	int years = 0;
+	cout << "\n==============Deposit ========\n";
+	cout << "\nEnter your amount of money you  deposit";
+	cin>> sum;
+	cout << "\nEnter percent per year";
+	cin>> percent;
+	cout << "\nWhat goal do wanna achive: ";
+	cin>> goal;
+	
+	while(sum<goal)
+	{
+		sum=sum +(sum*percent)/100;
+		years++;
+	}
+	
+	cout << "\nThat goal achive in " << years<< " \n";
+	
+	
+	
+}
+
+void fraction()
+{
+	
+}
+
+void guessNumber()
+{
+	int num;
+
+	cout << "\n==============Guess number ========\n";
+	
+}
